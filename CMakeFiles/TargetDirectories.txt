@@ -1,0 +1,6 @@
+C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/CMakeFiles/template_STM32F103C8T6.dir
+C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/CMakeFiles/edit_cache.dir
+C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/CMakeFiles/rebuild_cache.dir
+C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir
+C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir

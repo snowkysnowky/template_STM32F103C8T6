@@ -18,10 +18,15 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
+#include "usbd_cdc_if.h" /* Include USB CDC interface header for USB communication */
+#include <string.h>      /* Include string library for string manipulation */
+#include <stdio.h>       /* Include standard I/O library for printf functionality */
 
 /* USER CODE END Includes */
 
@@ -32,6 +37,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+// #define APP_RX_DATA_SIZE  1024
+// #define APP_TX_DATA_SIZE  1024
+
 
 /* USER CODE END PD */
 
@@ -43,6 +51,13 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+
+// char UserTxBufferFS[APP_TX_DATA_SIZE]; /* Buffer for data to send over USB CDC */
+// char UserRxBufferFS[APP_RX_DATA_SIZE]; /* Buffer for data received over USB CDC */
+
+char *data = "Hello, USB CDC!\r\n"; /* Data to be sent over USB CDC */
+
+uint8_t usb_buffer[64]; /* Buffer for USB CDC data transmission */
 
 /* USER CODE END PV */
 
@@ -86,6 +101,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -94,6 +110,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    CDC_Transmit_FS((uint8_t *)data, strlen(data)); /* Transmit data over USB CDC */
+    HAL_Delay(1000); /* Delay for 1 second to avoid flooding the USB CDC with data */
+
+    // /* Check if data is received */
+    // if (strlen(UserRxBufferFS) > 0) {
+    //   /* Echo received data back */
+    //   CDC_Transmit_FS((uint8_t *)UserRxBufferFS, strlen(UserRxBufferFS));
+    //   memset(UserRxBufferFS, 0, APP_RX_DATA_SIZE); /* Clear the receive buffer */
+    // }
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -109,6 +135,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -135,6 +162,12 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USB;
+  PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_PLL_DIV1_5;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }

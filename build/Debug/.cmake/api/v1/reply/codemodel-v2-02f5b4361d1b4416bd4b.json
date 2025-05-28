@@ -19,7 +19,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						1
+						2
 					]
 				},
 				{
@@ -34,7 +34,8 @@
 					"source" : "cmake/stm32cubemx",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -51,7 +52,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -60,14 +62,21 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "STM32_Drivers::@768a070a0fe75716b479",
-					"jsonFile" : "target-STM32_Drivers-Debug-d2107d9804ec74b75035.json",
+					"jsonFile" : "target-STM32_Drivers-Debug-a60aa5b21c8b1a91adad.json",
 					"name" : "STM32_Drivers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "USB_Device_Library::@768a070a0fe75716b479",
+					"jsonFile" : "target-USB_Device_Library-Debug-abc287365b7fb471a7db.json",
+					"name" : "USB_Device_Library",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "template_STM32F103C8T6::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-template_STM32F103C8T6-Debug-f5ff352b16e269df8947.json",
+					"jsonFile" : "target-template_STM32F103C8T6-Debug-c0399121015d64692341.json",
 					"name" : "template_STM32F103C8T6",
 					"projectIndex" : 0
 				}

@@ -36,13 +36,13 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 78,
+				"line" : 82,
 				"parent" : 2
 			},
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 72,
+				"line" : 76,
 				"parent" : 2
 			}
 		]
@@ -79,11 +79,11 @@
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy"
+					"path" : "C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/Drivers/STM32F1xx_HAL_Driver/Inc"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/Drivers/STM32F1xx_HAL_Driver/Inc"
+					"path" : "C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy"
 				},
 				{
 					"backtrace" : 3,
@@ -110,7 +110,9 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6,
+				7
 			]
 		},
 		{
@@ -143,11 +145,11 @@
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy"
+					"path" : "C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/Drivers/STM32F1xx_HAL_Driver/Inc"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/Drivers/STM32F1xx_HAL_Driver/Inc"
+					"path" : "C:/Users/HELLO/Documents/MyProject/template_STM32F103C8T6/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy"
 				},
 				{
 					"backtrace" : 3,
@@ -161,7 +163,7 @@
 			"language" : "ASM",
 			"sourceIndexes" : 
 			[
-				6
+				8
 			]
 		}
 	],
@@ -206,22 +208,22 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6,
+				7
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				6
+				8
 			]
 		},
 		{
 			"name" : "Object Libraries",
 			"sourceIndexes" : 
 			[
-				7,
-				8,
 				9,
 				10,
 				11,
@@ -231,7 +233,11 @@
 				15,
 				16,
 				17,
-				18
+				18,
+				19,
+				20,
+				21,
+				22
 			]
 		}
 	],
@@ -247,6 +253,18 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/gpio.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "Core/Src/dma.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "Core/Src/tim.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -289,6 +307,18 @@
 			"backtrace" : 3,
 			"isGenerated" : true,
 			"path" : "build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 3,
+			"isGenerated" : true,
+			"path" : "build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 3,
+			"isGenerated" : true,
+			"path" : "build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj",
 			"sourceGroupIndex" : 2
 		},
 		{

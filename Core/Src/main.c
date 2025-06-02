@@ -18,6 +18,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
+#include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -43,6 +45,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+
+uint16_t pwmData[10]; // Array to hold PWM data, size can be adjusted as needed
 
 /* USER CODE END PV */
 
@@ -86,8 +90,28 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
+  // Initialize the PWM data array with some values
+  pwmData[0] = 10;
+  pwmData[1] = 20;
+  pwmData[2] = 30;
+  pwmData[3] = 40;
+  pwmData[4] = 50;
+  pwmData[5] = 60;
+  pwmData[6] = 70;
+  pwmData[7] = 80;
+  pwmData[8] = 90;
+  pwmData[9] = 100;
+  // Start PWM generation on TIM1 channel 1 with the data in pwmData
 
+  if (HAL_TIM_PWM_Start_DMA(&htim1, TIM_CHANNEL_1, (uint32_t *)pwmData, sizeof(pwmData) / sizeof(pwmData[0])) != HAL_OK)
+  {
+    /* PWM start error */
+    Error_Handler();
+  }
+  
   /* USER CODE END 2 */
 
   /* Infinite loop */
